@@ -11,7 +11,8 @@ import javax.inject.Singleton
 @Component(modules = [ActivityModule::class,
     AndroidSupportInjectionModule::class,
     NetworkModule::class,
-    FragmentModule::class])
+    FragmentModule::class,
+    SchedulerModule::class])
 interface AppComponent {
 
     fun inject(app: JokesApplication)

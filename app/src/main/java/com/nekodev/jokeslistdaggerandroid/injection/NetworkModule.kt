@@ -2,6 +2,7 @@ package com.nekodev.jokeslistdaggerandroid.injection
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import com.nekodev.jokeslistdaggerandroid.api.JokesService
 import dagger.Module
 import dagger.Provides
@@ -27,6 +28,7 @@ class NetworkModule {
         return Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create(gson))
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build()
     }
 
