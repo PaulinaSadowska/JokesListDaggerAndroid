@@ -12,6 +12,10 @@ import javax.inject.Singleton
 @Module
 class NetworkModule {
 
+    companion object {
+        private const val BASE_URL = "http://api.icndb.com/"
+    }
+
     @Provides
     @Singleton
     fun provideJokesService(retrofit: Retrofit): JokesService {
@@ -21,7 +25,7 @@ class NetworkModule {
     @Provides
     fun provideRetrofit(gson: Gson): Retrofit {
         return Retrofit.Builder()
-                .baseUrl("http://api.icndb.com/")
+                .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build()
     }

@@ -9,7 +9,7 @@ interface JokesService {
 
     //http://api.icndb.com/jokes/random/20
     @GET("jokes/random/{numOfJokes}")
-    fun listRepos(@Path("numOfJokes") numOfJokes: Int): Single<Jokes>
+    fun getJokes(@Path("numOfJokes") numOfJokes: Int): Single<Jokes>
 }
 
 data class Joke(val id: Int,
